@@ -14,12 +14,17 @@ namespace MyCSharphCompilerIDE
 {
     public partial class Form1 : Form
     {
+        #region Properties
         public string currentPath { get; set; }
+        #endregion
+        #region Constructer
         public Form1()
         {
             InitializeComponent();
-        }
+        } 
+        #endregion
 
+        #region Methods
         private void ReadToFile()
         {
             StreamReader streamReader = new StreamReader(currentPath);
@@ -43,7 +48,8 @@ namespace MyCSharphCompilerIDE
                 currentPath = saveFileDialog.FileName;
                 WriteToFile();
             }
-        }
+        } 
+        #endregion
 
         #region Extension
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,6 +121,7 @@ namespace MyCSharphCompilerIDE
                 textBoxArea.Font = fontDialog.Font;
             }
         }
+
         #endregion
 
 
